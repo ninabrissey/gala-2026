@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Typography, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Button,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '@mui/material';
 import { motion } from 'framer-motion';
 
 interface SponsorshipCardProps {
