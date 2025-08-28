@@ -15,13 +15,22 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     h1: {
       fontWeight: 700,
       fontSize: '3rem',
     },
     h5: {
       fontWeight: 500,
+    },
+  },
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'inherit',
+        },
+      },
     },
   },
 });

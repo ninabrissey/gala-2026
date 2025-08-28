@@ -3,12 +3,30 @@ import Image from 'next/image'
 
 export const ChairLetter = () => {
   return (
-    <Box sx={{ color: 'white',
+    <Box sx={{ 
+      color: 'white',
       boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
       background: 'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
-      transition: 'transform 0.3s, box-shadow 0.3s', borderRadius: '30px',
+      transition: 'transform 0.3s, box-shadow 0.3s', 
+      borderRadius: '30px',
       padding: '35px', 
-      textAlign: 'left'}}>
+      textAlign: 'left',
+      fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      '& p': {
+        fontSize: '1.1rem',
+        lineHeight: 1.8,
+        color: 'rgba(255, 255, 255, 0.9)',
+        marginBottom: '1.5rem',
+        fontWeight: 300,
+        '&:last-child': {
+          marginBottom: 0
+        },
+        '& strong': {
+          color: 'white',
+          fontWeight: 600
+        }
+      }
+    }}>
       <p style={{marginTop: '0px'}}>
         Chairing this year’s SAFE Gala is an honor of a lifetime and a
         continuation of our steadfast support for SAFE. The 2026 gala theme is
@@ -79,18 +97,54 @@ export const ChairLetter = () => {
         ask that you support SAFE’s mission to continue these lifesaving
         services.
       </p>
-      <Stack direction={'row'} spacing={4} alignItems={'center'}>
-        <Box>
-          <p>With sincere gratitude,</p>
-          <p style={{ margin: 0 }}>Nelia Robbi, Co-Chair</p>
-          <p style={{ margin: 0}}>Of Counsel, McGinnis Lochridge</p>
-          <p>and</p>
-          <p style={{ margin: 0, marginTop: '10px' }}>Karly Houchin, Co-Chair</p>
-          <p style={{ margin: 0 }}>Partner, Allensworth</p>
+      <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} alignItems={{ xs: 'flex-start', md: 'center' }} sx={{ mt: 4 }}>
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h3" sx={{ 
+            fontSize: '1.8rem', 
+            fontWeight: 600, 
+            mb: 2,
+            backgroundImage: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            With sincere gratitude,
+          </Typography>
+          <Box sx={{ '& p': { mb: 0.5 } }}>
+            <Typography variant="h4" sx={{ fontSize: '1.2rem', fontWeight: 500, color: 'white' }}>Nelia Robbi, Co-Chair</Typography>
+            <Typography variant="body1" sx={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)', mb: 2 }}>Of Counsel, McGinnis Lochridge</Typography>
+            
+            <Typography variant="h4" sx={{ fontSize: '1.2rem', fontWeight: 500, color: 'white', mt: 3 }}>Karly Houchin, Co-Chair</Typography>
+            <Typography variant="body1" sx={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)' }}>Partner, Allensworth</Typography>
+          </Box>
         </Box>
-        <Box sx={{mt: 2}}>
-          <Image src="/imageedit_4_5480396383.png" alt="Nelia Robbi" width={160} height={180} style={{marginRight: '20px', marginBottom: '10px'}} />
-          <Image src="/imageedit_15_4866972827.png" alt="Karly Houchin" width={145} height={185} style={{marginBottom: '10px'}} />
+        <Box sx={{ 
+          display: 'flex', 
+          gap: 3,
+          justifyContent: { xs: 'center', md: 'flex-end' },
+          width: { xs: '100%', md: 'auto' },
+          mt: { xs: 3, md: 0 }
+        }}>
+          <Image 
+            src="/imageedit_4_5480396383.png" 
+            alt="Nelia Robbi" 
+            width={160} 
+            height={180} 
+            style={{
+              borderRadius: '12px',
+              boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
+            }} 
+          />
+          <Image 
+            src="/imageedit_15_4866972827.png" 
+            alt="Karly Houchin" 
+            width={145} 
+            height={185}
+            style={{
+              borderRadius: '12px',
+              boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
+            }}
+          />
         </Box>
       </Stack>
     </Box>

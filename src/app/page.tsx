@@ -104,19 +104,31 @@ export default function Home() {
             ))}
           </Box>
         </Box>
-        <h2 style={{marginTop: '40px', marginBottom: 0}}>GALA TEAM</h2>
-        <p style={{
-          backgroundImage: 'linear-gradient(to right, #9333ea, #f28e2b, #e15759, #4e79a7, #edc948)',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          display: 'inline-block',
-          fontSize: '1.5em',
-          fontWeight: 'bold',
-          width: '75%'
+        <h2>GALA TEAM</h2>
+        <Box sx={{
+          width: '100%',
+          maxWidth: '1200px',
+          mx: 'auto',
+          mb: 4,
+          display: 'flex',
+          justifyContent: 'center',
+          '& .team-names': {
+            backgroundImage: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontSize: '1.2rem',
+            fontWeight: 500,
+            lineHeight: 1.6,
+            textAlign: 'center',
+            width: '90%',
+            
+          }
         }}>
-          • {teamMembers.join(' • ')} •
-        </p>
+          <div className="team-names" style={{fontWeight: 'bold', fontStyle: 'italic'}}>
+            • {teamMembers.join(' • ')} •
+          </div>
+        </Box>
       </Stack>
     </Box>
   )
