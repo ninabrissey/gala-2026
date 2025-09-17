@@ -23,19 +23,18 @@ export default function Home() {
       
       <Stack alignItems="center" spacing={0} sx={{ width: '100%' }}>
         <Image
-          src="/Gala-2026-LOGO-full-color-on-light-background.png"
+          src="/Gala-2026-logo-type-only-full-color.png"
           alt="Safe logo"
-          width={1000}
-          height={500}
+          width={750}
+          height={375}
           style={{
-            width: '60%',
+            width: '55%',
             height: 'auto',
           }}
         />
         
         <p style={{
           color: 'white',
-          marginTop: 0,
           marginBottom: '10px',
           fontSize: '1.5em',
         }}>
