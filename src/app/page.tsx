@@ -28,7 +28,7 @@ export default function Home() {
           width={750}
           height={375}
           style={{
-            width: '55%',
+            width: '50%',
             height: 'auto',
           }}
         />
