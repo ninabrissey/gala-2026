@@ -19,6 +19,8 @@ interface SponsorshipCardProps {
 }
 
 export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, description, features, underwriting }) => {
+const [expanded, setExpanded] = React.useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -120,13 +122,7 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, 
 
           {/* Features Section */}
           <List 
-            sx={{ 
-              display: 'grid', 
-              gridTemplateColumns: { 
-                xs: '1fr', 
-                md: features.length >= 5 ? 'repeat(2, 1fr)' : '1fr' 
-              }, 
-              gap: { xs: 1, md: 1.5 }, 
+            sx={{
               width: '100%', 
               p: 0, 
               m: 0,
@@ -137,49 +133,47 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, 
                   minWidth: 24,
                   mr: 1
                 }
-              },
-              // When there are two cards in a row (on medium screens)
-              '@media (min-width: 900px) and (max-width: 1439px)': {
-                gridTemplateColumns: '1fr',
-                '& .MuiListItem-root': {
-                  justifyContent: 'flex-start',
-                  px: 0
-                }
-              },
-              // When there are three cards in a row (on large screens)
-              '@media (min-width: 1440px)': {
-                gridTemplateColumns: features.length >= 5 ? 'repeat(2, 1fr)' : '1fr',
-                width: features.length < 5 ? '50%' : '100%',
-                '& .MuiListItem-root': {
-                  justifyContent: features.length < 5 ? 'center' : 'flex-start',
-                  px: features.length < 5 ? 2 : 1
-                }
               }
             }}
           >
-            {features.map((feature, index) => (
+            {expanded ? features.map((feature, index) => (
+              <FeatureItem key={index} text={feature} />
+            )) : features.slice(0, 2).map((feature, index) => (
               <FeatureItem key={index} text={feature} />
             ))}
           </List>
 
           {/* Underwriting Option */}
-          {underwriting && (
+          { expanded && underwriting && (
             <Typography variant="body2" sx={{ color: 'gray.400', fontWeight: 300, fontStyle: 'italic'}}>
               {underwriting}
             </Typography>
           )}
-
-          {/* Spacer to push button to bottom */}
-          {/* <Box sx={{ flexGrow: 1 }} /> */}
-          
-          {/* Call to Action Button */}
+          <Typography
+            onClick={() => setExpanded(!expanded)}
+            sx={{
+              textDecoration: 'underline',
+              color: 'gray.300',
+              fontSize: { xs: '1rem', md: '1.125rem' },
+              textAlign: 'left',
+              ml: 3,
+              cursor: 'pointer',
+              width: '100%',
+              '&:hover': {
+                  transform: 'scale(1.05)',
+                  transition: 'transform 0.3s'   
+                }
+            }}
+          >
+            {expanded ? 'Show Less' : 'Show More'}
+          </Typography>
           <a href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor" style={{ textDecoration: 'none', width: '100%', display: 'block', marginTop: 'auto' }}>
           <Button
               variant="contained"
               sx={{
                 width: '100%',
-                py: 2,
-                px: 3,
+                py: 1,
+                px: 2,
                 borderRadius: 50,
                 fontSize: '1.125rem',
                 fontWeight: 'bold',

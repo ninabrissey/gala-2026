@@ -26,12 +26,11 @@ const letterContent = {
   giving to continue providing critical, essential services to survivors
   in our community:`,
   
-  housing: `• Housing is violence prevention. SAFE houses nearly 1,000 people each
+  services: [
+    `• Housing is violence prevention. SAFE houses nearly 1,000 people each
   night in our temporary and permanent supportive housing facilities, with
   two new permanent supportive housing apartment complexes under
   construction right now to open at the end of 2026.`,
-  
-  services: [
     `• Forensic exams, medical care and advocate services for survivors of
     sexual abuse.`,
     `• Foster and adoption services, helping families foster children in need
@@ -66,7 +65,8 @@ export const ChairLetter = () => {
         borderRadius: '30px',
         padding: '35px',
         maxWidth: '1200px',
-        margin: '0 auto',
+        margin: 'auto',
+        marginTop: '40px',
         textAlign: 'left',
         fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         '& p': {
@@ -89,7 +89,6 @@ export const ChairLetter = () => {
         <p style={{ marginTop: '0px' }}>{letterContent.intro}</p>
         <p>{letterContent.aboutUs}</p>
         <p>{letterContent.importance}</p>
-        <p>{letterContent.housing}</p>
         <Box ml={4}>
           {letterContent.services.map((service, index) => (
             <p key={index}>{service}</p>

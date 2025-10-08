@@ -14,7 +14,7 @@ export const sponsorshipLevels = [
       'Verbal recognition during the evening program',
       'Recognition in SAFE’s Gratitude Report (1,000+ households)',
       'Luxury hotel stay (1 night, breakfast for two)',
-      'Invitation for 4 guests to SAFE events in 2026, including Touch-A-Truck and Celebration Luncheon',
+      'Invitation for 4 guests to SAFE events in 2026, including For the Children, Touch-A-Truck, and Celebration Luncheon',
     ],
     underwriting: 'Option to underwrite one major gallery installation or immersive exhibit',
   },

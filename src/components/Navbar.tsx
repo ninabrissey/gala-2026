@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
@@ -28,11 +29,11 @@ const Navbar = () => {
               backgroundColor: 'rgba(255, 255, 255, 0.2)',
               transition: 'background-color 0.3s',
               borderRadius: '4px',
-              padding: '6px 6px'
+              padding: '6px 6px', 
             }
           }}
         >
-          Gala Sponsor
+          Attend or Sponsor
         </Button>
         <Button 
           color="inherit" 
