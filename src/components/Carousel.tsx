@@ -20,7 +20,7 @@ const galleryImages = [
 
 export const Carousel = () => {
   return (
-    <Box sx={{ position: 'relative', py: 4, width: '100%' }}>
+    <Box sx={{ position: 'relative', py: 4, width: '100%', mb: 4 }}>
       <Swiper
         // Add required modules
         modules={[Navigation]}
@@ -75,7 +75,7 @@ export const Carousel = () => {
           top: '50%',
           transform: 'translateY(-50%)',
           zIndex: 10,
-          backgroundColor: 'white',
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
           color: 'black',
           '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' },
           display: { xs: 'none', md: 'flex' }, // Hide on mobile
