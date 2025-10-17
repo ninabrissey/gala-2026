@@ -75,7 +75,7 @@ export const Carousel = () => {
           top: '50%',
           transform: 'translateY(-50%)',
           zIndex: 10,
-          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          backgroundColor: 'white',
           color: 'black',
           '&:hover': { backgroundColor: 'rgba(255,255,255,0.8)' },
           display: { xs: 'none', md: 'flex' }, // Hide on mobile
