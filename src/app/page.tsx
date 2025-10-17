@@ -9,6 +9,7 @@ import { ChairLetter } from '@/components/ChairLetter'
 import { teamMembers } from '@/data/team-members'
 import styles from './page.module.css'
 import { useState } from 'react'
+import { Carousel } from '@/components/Carousel'
 
 export default function Home() {
 const [chairLetterOpen, setChairLetterOpen] = useState(false)
@@ -74,6 +75,8 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
         />
       </Stack>
 
+      <Carousel />
+
       <Box sx={{
         width: '100%',
         display: 'flex',
@@ -109,6 +112,8 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
               height={250}
               priority
             />} */}
+
+          
           {chairLetterOpen && <ChairLetter />}
         </Box>
       </Box>
