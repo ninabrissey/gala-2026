@@ -20,10 +20,7 @@ const galleryImages = [
   '/carousel-10.jpg',
   '/carousel-11.jpg',
   '/carousel-12.jpg',
-  '/carousel-13.jpg',
-  '/carousel-14.jpg',
-  '/carousel-15.jpg',
-  '/carousel-16.jpg'
+  '/carousel-13.jpg'
 ]
 
 export const Carousel = () => (
