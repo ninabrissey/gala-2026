@@ -35,33 +35,6 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
           className={styles.logo}
           priority
         />
-        
-        <p style={{
-          color: 'white',
-          marginBottom: '10px',
-          fontSize: '1.5em',
-        }}>
-          Saturday, February 28, 2026
-        </p>
-        
-        <p style={{
-          color: 'white',
-          marginTop: 0,
-          marginBottom: 0,
-          fontSize: '1.5em',
-        }}>
-          JW Marriott
-        </p>
-        
-        <p style={{
-          color: 'white',
-          marginBottom: '50px',
-          marginTop: 0,
-          fontSize: '1.5em',
-        }}>
-          Downtown Austin, TX
-        </p>
-        
         <Image
           src="/Gala-wave-of-colors.png"
           alt="Gala wave of colors"
@@ -69,14 +42,20 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
           height={400}
           sizes="(max-width: 768px) 100vw, 700px"
           style={{
-            width: '100%',
-            marginTop: '-50px',
+            width: '100%'
           }}
         />
       </Stack>
-
+      <Box >
+        <Image
+            src="/details.png"
+            alt="Gala wave of colors"
+            width={375}
+            height={115}
+            sizes="(max-width: 768px) 100vw, 700px"
+          />
+      </Box>
       <Carousel />
-
       <Box sx={{
         width: '100%',
         display: 'flex',
