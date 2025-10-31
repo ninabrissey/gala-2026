@@ -17,6 +17,7 @@ export const sponsorshipLevels = [
       'Invitation for 4 guests to SAFE events in 2026, including For the Children, Touch-A-Truck, and Celebration Luncheon',
     ],
     underwriting: 'Option to underwrite one major gallery installation or immersive exhibit',
+    soldOut: true
   },
   {
     title: 'THE VISIONARY SPONSORS',

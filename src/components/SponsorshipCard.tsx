@@ -9,6 +9,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import { SoldOutOverlay } from './SoldOutOverlay';
 
 interface SponsorshipCardProps {
   title: string;
@@ -16,9 +17,10 @@ interface SponsorshipCardProps {
   description: string;
   features: string[];
   underwriting: string | null;
+  soldOut?: boolean;
 }
 
-export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, description, features, underwriting }) => {
+export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, description, features, underwriting, soldOut }) => {
 const [expanded, setExpanded] = React.useState(false)
 
   return (
@@ -55,6 +57,7 @@ const [expanded, setExpanded] = React.useState(false)
           },
         }}
       >
+        {soldOut && <SoldOutOverlay />}
         {/* Background Gradient Effect - inspired by the provided image */}
         <Box
           sx={{
