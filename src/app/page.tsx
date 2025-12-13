@@ -1,18 +1,20 @@
 'use client'
 
 import Image from 'next/image'
-import { Box, Button, Stack } from '@mui/material'
+import { Box, Typography, Stack, Button } from '@mui/material'
+import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import { SponsorshipCard } from '@/components/SponsorshipCard'
 import { sponsorshipLevels } from '@/data/sponsorship-levels'
 import { ChairLetter } from '@/components/ChairLetter'
+import SponsorsList from '@/components/SponsorsList'
 import { teamMembers } from '@/data/team-members'
 import styles from './page.module.css'
 import { useState } from 'react'
 import { Carousel } from '@/components/Carousel'
 
 export default function Home() {
-const [chairLetterOpen, setChairLetterOpen] = useState(false)
+  const [chairLetterOpen, setChairLetterOpen] = useState(false)
 
   return (
     <Box
@@ -25,7 +27,7 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
       }}
     >
       <Navbar />
-      
+
       <Stack alignItems="center" spacing={0} sx={{ width: '100%' }}>
         <Image
           src="/Gala-2026-logo-type-only-full-color.png"
@@ -42,48 +44,68 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
           height={400}
           sizes="(max-width: 768px) 100vw, 700px"
           style={{
-            width: '100%'
+            width: '100%',
           }}
         />
       </Stack>
-      <Box >
+      <Box>
         <Image
-            src="/details.png"
-            alt="Gala wave of colors"
-            width={375}
-            height={115}
-            sizes="(max-width: 768px) 100vw, 700px"
-          />
+          src="/details.png"
+          alt="Gala wave of colors"
+          width={375}
+          height={115}
+          sizes="(max-width: 768px) 100vw, 700px"
+        />
       </Box>
       <Carousel />
-      <Box sx={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-      }}>
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <Box sx={{ width: '80%', textAlign: 'center' }}>
-          <Button
-          variant='contained'
-          sx={{
-            padding: '0 40px 0px 40px',
-            borderRadius: '50px',
-            backgroundColor: 'white',
-            color: 'black',
-            '&:hover': {
-              backgroundColor: '#19B8CD',
-              transition: 'background-color 0.3s',
-            }
-          }}
-          >  <h2 
-            onClick={() => setChairLetterOpen(!chairLetterOpen)}
-            style={{ cursor: 'pointer', marginBottom: '20px' }}
+          <Box
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              mt: 6,
+            }}
           >
-            {chairLetterOpen ? 'CLOSE CHAIR LETTER' : 'READ CHAIR LETTER'}
-            </h2>
+            <Button
+              variant="contained"
+              onClick={() => setChairLetterOpen(!chairLetterOpen)}
+              sx={{
+                backgroundColor: '#19B8CD',
+                color: 'white',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                fontSize: '1.8rem',
+                px: 8,
+                py: 2,
+                borderRadius: '50px',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                '&:hover': {
+                  backgroundColor: '#0fa4b8',
+                  boxShadow: '0 6px 12px rgba(0,0,0,0.25)',
+                  transform: 'translateY(-2px)',
+                },
+                transition: 'all 0.3s ease',
+              }}
+            >
+              {chairLetterOpen ? 'CLOSE CHAIR LETTER' : 'READ CHAIR LETTER'}
+            </Button>
+          </Box>
 
-          </Button>
-        
-            {/* {!chairLetterOpen && <Image
+          {/* {!chairLetterOpen && <Image
             onClick={() => setChairLetterOpen(!chairLetterOpen)}
               src="/open-chair-letter.png"
               alt="chair letter"
@@ -92,46 +114,65 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
               priority
             />} */}
 
-          
           {chairLetterOpen && <ChairLetter />}
         </Box>
       </Box>
 
       <Stack sx={{ mt: 4 }} alignItems="center">
-        <h2 style={{ marginBottom: '40px' }}>SPONSORSHIP LEVELS</h2>
-        
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: { xs: 3, md: 4 },
-          px: { xs: 2, sm: 3, md: 4 },
-          maxWidth: '1800px',
-          mx: 'auto',
-          width: '90%',
-          boxSizing: 'border-box',
-        }}>
-          <Box sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{
+            textAlign: 'center',
+            mb: 5,
+            mt: 6,
+            fontWeight: 'bold',
+            color: 'white',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            fontSize: '1.8rem',
+            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
+          }}
+        >
+          SPONSORSHIP LEVELS
+        </Typography>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
             gap: { xs: 3, md: 4 },
-            width: '100%',
-            '& > *': {
-              display: 'flex',
-              flexDirection: 'column',
-              minWidth: 0, // Prevents flex items from overflowing
+            px: { xs: 2, sm: 3, md: 4 },
+            maxWidth: '1800px',
+            mx: 'auto',
+            width: '90%',
+            boxSizing: 'border-box',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: { xs: 3, md: 4 },
+              width: '100%',
               '& > *': {
-                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
+                minWidth: 0, // Prevents flex items from overflowing
+                '& > *': {
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                },
               },
-            },
-            '@media (min-width: 900px) and (max-width: 1439px)': {
-              gridTemplateColumns: 'repeat(2, 1fr)',
-            },
-            '@media (min-width: 1440px)': {
-              gridTemplateColumns: 'repeat(3, 1fr)',
-            },
-          }}>
+              '@media (min-width: 900px) and (max-width: 1439px)': {
+                gridTemplateColumns: 'repeat(2, 1fr)',
+              },
+              '@media (min-width: 1440px)': {
+                gridTemplateColumns: 'repeat(3, 1fr)',
+              },
+            }}
+          >
             {sponsorshipLevels.map((item) => (
               <Box key={item.title}>
                 <SponsorshipCard {...item} />
@@ -140,30 +181,60 @@ const [chairLetterOpen, setChairLetterOpen] = useState(false)
           </Box>
         </Box>
 
-        <h2 style={{ marginTop: '50px' }}>GALA TEAM</h2>
-        
-        <Box sx={{
-          width: '100%',
-          maxWidth: '1200px',
-          mx: 'auto',
-          mb: 4,
-          display: 'flex',
-          justifyContent: 'center',
-          '& .team-names': {
-            backgroundImage: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            fontSize: '1.2rem',
-            fontWeight: 500,
-            lineHeight: 1.6,
+        <SponsorsList />
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{
             textAlign: 'center',
-            width: '90%',
-          },
-        }}>
-          <div className="team-names" style={{ fontStyle: 'italic' }}>
-            • {teamMembers.join(' • ')} •
-          </div>
+            mb: 4,
+            mt: 4,
+            fontWeight: 'bold',
+            color: 'white',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            fontSize: '1.8rem',
+            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
+          }}
+        >
+          GALA TEAM
+        </Typography>
+
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            mb: 8,
+            display: 'flex',
+            justifyContent: 'center',
+            '& .team-names': {
+              color: '#1db6ce',
+              fontSize: '1.2rem',
+              fontWeight: 500,
+              lineHeight: 1.6,
+              textAlign: 'center',
+              width: '90%',
+              textShadow: '0 0 10px rgba(29, 182, 206, 0.3)',
+            },
+          }}
+        >
+          <div
+            className="team-names"
+            style={{
+              fontFamily: 'var(--font-playfair), serif',
+              fontWeight: 600,
+              fontStyle: 'italic',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: `• ${teamMembers.join(' • ')} •`
+                .replace(/•/g, '<span style="color: white">•</span>')
+                .replace(
+                  /<span style="color: white"><\/span>\s*<span style="color: white">/g,
+                  ' '
+                ),
+            }}
+          />
         </Box>
       </Stack>
     </Box>
