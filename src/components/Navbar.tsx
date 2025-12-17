@@ -1,9 +1,7 @@
 'use client'
-import Link from 'next/link'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
-import Image from 'next/image'
+import { NavButton } from './NavButton'
 
 const Navbar = () => {
   return (
@@ -26,49 +24,23 @@ const Navbar = () => {
           paddingRight: '24px',
         }}
       >
-        <Button
-          color="inherit"
-          component={Link}
-          href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor"
-          sx={{
-            color: 'white',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
-            p: '8px 16px',
-            '&:hover': {
-              color: '#19B8CD',
-              backgroundColor: 'transparent',
-              textDecoration: 'none',
-            },
-          }}
-        >
-          Attend or Sponsor
-        </Button>
-        <Button
-          color="inherit"
-          target="_blank"
-          component={Link}
+        <NavButton
+          name="Sponsor"
+          href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor"
+        />
+        <NavButton
+          name="Tickets"
+          href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/tix?p=individual"
+        />
+        <NavButton
+          name="Donate"
+          href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/donate?p=donation"
+        />
+        <NavButton
+          name="SAFE"
           href="https://www.safeaustin.org/"
-          sx={{
-            color: 'white',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
-            p: '8px 16px',
-            '&:hover': {
-              color: '#19B8CD',
-              backgroundColor: 'transparent',
-              textDecoration: 'none',
-            },
-          }}
-        >
-          SAFE Alliance
-        </Button>
+          target="_blank"
+        />
       </Toolbar>
     </AppBar>
   )

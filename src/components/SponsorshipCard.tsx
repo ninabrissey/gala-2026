@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Box,
   Typography,
@@ -7,27 +7,34 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-} from '@mui/material';
-import { motion } from 'framer-motion';
-import { SoldOutOverlay } from './SoldOutOverlay';
+} from '@mui/material'
+import { motion } from 'framer-motion'
+import { SoldOutOverlay } from './SoldOutOverlay'
 
 interface SponsorshipCardProps {
-  title: string;
-  price: string;
-  description: string;
-  features: string[];
-  underwriting: string | null;
-  soldOut?: boolean;
+  title: string
+  price: string
+  description: string
+  features: string[]
+  underwriting: string | null
+  soldOut?: boolean
 }
 
-export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({ title, price, description, features, underwriting, soldOut }) => {
-const [expanded, setExpanded] = React.useState(false)
+export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
+  title,
+  price,
+  description,
+  features,
+  underwriting,
+  soldOut,
+}) => {
+  const [expanded, setExpanded] = React.useState(false)
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -49,7 +56,8 @@ const [expanded, setExpanded] = React.useState(false)
           color: 'white',
           boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
           // Changed the background to a lighter, more vibrant gradient
-          background: 'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
+          background:
+            'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
           transition: 'transform 0.3s, box-shadow 0.3s',
           '&:hover': {
             transform: 'scale(1.01)',
@@ -64,10 +72,19 @@ const [expanded, setExpanded] = React.useState(false)
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            opacity: 0.8
+            opacity: 0.8,
           }}
         />
-        <Box sx={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%', gap: 4 }}>
+        <Box
+          sx={{
+            position: 'relative',
+            zIndex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+            gap: 4,
+          }}
+        >
           {/* Title and Price Section */}
           <Box sx={{ textAlign: 'left', width: '100%' }}>
             <Typography
@@ -79,7 +96,8 @@ const [expanded, setExpanded] = React.useState(false)
                 letterSpacing: '-0.025em',
                 pb: 1,
                 lineHeight: 1.1,
-                backgroundImage: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
+                backgroundImage:
+                  'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -100,7 +118,8 @@ const [expanded, setExpanded] = React.useState(false)
                 fontWeight: 900,
                 mt: 1,
                 color: 'white',
-                backgroundImage: 'linear-gradient(to right, #F28E2B, #E15759, #F5A524)',
+                backgroundImage:
+                  'linear-gradient(to right, #F28E2B, #E15759, #F5A524)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -124,31 +143,38 @@ const [expanded, setExpanded] = React.useState(false)
           </Typography>
 
           {/* Features Section */}
-          <List 
+          <List
             sx={{
-              width: '100%', 
-              p: 0, 
+              width: '100%',
+              p: 0,
               m: 0,
               '& .MuiListItem-root': {
                 justifyContent: 'flex-start',
                 px: 1,
                 '& .MuiListItemIcon-root': {
                   minWidth: 24,
-                  mr: 1
-                }
-              }
+                  mr: 1,
+                },
+              },
             }}
           >
-            {expanded ? features.map((feature, index) => (
-              <FeatureItem key={index} text={feature} />
-            )) : features.slice(0, 2).map((feature, index) => (
-              <FeatureItem key={index} text={feature} />
-            ))}
+            {expanded
+              ? features.map((feature, index) => (
+                  <FeatureItem key={index} text={feature} />
+                ))
+              : features
+                  .slice(0, 2)
+                  .map((feature, index) => (
+                    <FeatureItem key={index} text={feature} />
+                  ))}
           </List>
 
           {/* Underwriting Option */}
-          { expanded && underwriting && (
-            <Typography variant="body2" sx={{ color: 'gray.400', fontWeight: 300, fontStyle: 'italic'}}>
+          {expanded && underwriting && (
+            <Typography
+              variant="body2"
+              sx={{ color: 'gray.400', fontWeight: 300, fontStyle: 'italic' }}
+            >
               {underwriting}
             </Typography>
           )}
@@ -163,15 +189,23 @@ const [expanded, setExpanded] = React.useState(false)
               cursor: 'pointer',
               width: '100%',
               '&:hover': {
-                  transform: 'scale(1.05)',
-                  transition: 'transform 0.3s'   
-                }
+                transform: 'scale(1.05)',
+                transition: 'transform 0.3s',
+              },
             }}
           >
             {expanded ? 'Show Less' : 'Show More'}
           </Typography>
-          <a href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor" style={{ textDecoration: 'none', width: '100%', display: 'block', marginTop: 'auto' }}>
-          <Button
+          <a
+            href="https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor"
+            style={{
+              textDecoration: 'none',
+              width: '100%',
+              display: 'block',
+              marginTop: 'auto',
+            }}
+          >
+            <Button
               variant="contained"
               sx={{
                 width: '100%',
@@ -188,8 +222,9 @@ const [expanded, setExpanded] = React.useState(false)
                 textTransform: 'none',
                 '&:hover': {
                   transform: 'scale(1.05)',
-                  background: 'linear-gradient(45deg, #8418D5 0%, #5C2B92 100%)',
-                  boxShadow: '0 10px 20px rgba(132, 24, 213, 0.6)'
+                  background:
+                    'linear-gradient(45deg, #8418D5 0%, #5C2B92 100%)',
+                  boxShadow: '0 10px 20px rgba(132, 24, 213, 0.6)',
                 },
               }}
             >
@@ -199,8 +234,8 @@ const [expanded, setExpanded] = React.useState(false)
         </Box>
       </Box>
     </motion.div>
-  );
-};
+  )
+}
 
 // Helper component for a single feature item
 const FeatureItem: React.FC<{ text: string }> = ({ text }) => {
@@ -227,11 +262,11 @@ const FeatureItem: React.FC<{ text: string }> = ({ text }) => {
             fontSize: { xs: '1rem', md: '1rem' },
             fontWeight: 300,
             color: 'gray.200',
-          }
+          },
         }}
       />
     </ListItem>
-  );
-};
+  )
+}
 
-export default SponsorshipCard;
+export default SponsorshipCard
