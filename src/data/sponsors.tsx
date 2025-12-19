@@ -1,29 +1,52 @@
 // Define sponsor levels
-export type SponsorLevel = 'MASTERPIECE' | 'CURATOR' | 'GALLERY' | 'CANVAS' | 'EXHIBIT';
+export type SponsorLevel =
+  | 'MASTERPIECE'
+  | 'CURATOR'
+  | 'VALET'
+  | 'GALLERY'
+  | 'CANVAS'
+  | 'EXHIBIT'
 
 // Define sponsor levels and their sponsors
-export const sponsorsByLevel: Record<SponsorLevel, string[]> = {
-  'MASTERPIECE': ['Weerasooriya Family Foundation'],
-  'CURATOR': [
-    'Mercedes-Benz, Rebecca & Bryan Hardeman',
-    'MFI Foundation'
-  ],
-  'GALLERY': ['H-E-B'],
-  'CANVAS': ['Alicia and Michael Cole'],
-  'EXHIBIT': [
-    'Einstein Moving Company',
-    'Liane and Mark Noble',
-    'Barneson Catering',
-    'Lila and David Broslma',
-    'Liz Bailey',
-    'Emma Cartmel',
-    'Rob Hellams',
-    'Bill Skeen',
-    'Ascension',
-    'Allensworth'
-  ]
-};
+export interface SponsorLevelData {
+  level: SponsorLevel
+  sponsors: string[]
+}
 
-// Get all sponsor levels
-export const getSponsorLevels = (): SponsorLevel[] => 
-  Object.keys(sponsorsByLevel) as SponsorLevel[];
+export const sponsors: SponsorLevelData[] = [
+  {
+    level: 'MASTERPIECE',
+    sponsors: ['Weerasooriya Family Foundation'],
+  },
+  {
+    level: 'CURATOR',
+    sponsors: ['MFI Foundation'],
+  },
+  {
+    level: 'VALET',
+    sponsors: ['Mercedes-Benz, Rebecca & Bryan Hardeman'],
+  },
+  {
+    level: 'GALLERY',
+    sponsors: ['H-E-B'],
+  },
+  {
+    level: 'CANVAS',
+    sponsors: ['Alicia and Michael Cole'],
+  },
+  {
+    level: 'EXHIBIT',
+    sponsors: [
+      'Einstein Moving Company',
+      'Liane and Mark Noble',
+      'Barneson Catering',
+      'Lila and David Broslma',
+      'Liz Bailey',
+      'Emma Cartmel',
+      'Rob Hellams',
+      'Bill Skeen',
+      'Ascension',
+      'Allensworth',
+    ],
+  },
+]

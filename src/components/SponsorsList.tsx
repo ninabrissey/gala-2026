@@ -1,30 +1,19 @@
 import React from 'react'
 import { Box, Typography, Container, keyframes } from '@mui/material'
 import { motion } from 'framer-motion'
-import {
-  sponsorsByLevel,
-  SponsorLevel,
-  getSponsorLevels,
-} from '@/data/sponsors'
-
-// Map the level keys to their display names
-const levelDisplayNames: Record<SponsorLevel, string> = {
-  MASTERPIECE: 'THE MASTERPIECE SPONSOR',
-  CURATOR: 'THE CURATOR SPONSORS',
-  GALLERY: 'THE GALLERY SPONSORS',
-  CANVAS: 'THE CANVAS SPONSORS',
-  EXHIBIT: 'THE EXHIBIT SPONSORS',
-}
+import { sponsors, SponsorLevel } from '@/data/sponsors'
 
 const SponsorsList: React.FC = () => {
-  const sponsorLevels = getSponsorLevels()
-
-  // Get sponsors grouped by level
-  const sponsorsByLevelList = sponsorLevels.map((level) => ({
-    level,
-    title: levelDisplayNames[level] || level,
-    sponsors: sponsorsByLevel[level],
-  }))
+  // Map sponsors to include the title with proper pluralization
+  const sponsorsWithTitles = sponsors.map(
+    ({ level, sponsors: sponsorList }) => ({
+      level,
+      title: `THE ${level.charAt(0) + level.slice(1).toLowerCase()} SPONSOR${
+        sponsorList.length > 1 ? 'S' : ''
+      }`,
+      sponsors: sponsorList,
+    })
+  )
 
   return (
     <Container maxWidth="lg" sx={{ backgroundColor: 'black', mt: 8 }}>
@@ -53,7 +42,7 @@ const SponsorsList: React.FC = () => {
           </Typography>
         </motion.div>
       </Box>
-      {sponsorsByLevelList.map(({ level, title, sponsors }) => (
+      {sponsorsWithTitles.map(({ level, title, sponsors }) => (
         <Box key={level} sx={{ mb: 8 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -87,7 +76,7 @@ const SponsorsList: React.FC = () => {
                 gap: 2,
               }}
             >
-              {sponsors.map((sponsorName, index) => (
+              {sponsors.map((sponsorName: string, index: number) => (
                 <motion.div
                   key={`${level}-${index}`}
                   initial={{ opacity: 0, y: 20 }}
