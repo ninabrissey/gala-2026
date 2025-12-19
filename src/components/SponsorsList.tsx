@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box, Typography, Container, keyframes } from '@mui/material'
+import { Box, Typography, Container } from '@mui/material'
 import { motion } from 'framer-motion'
-import { sponsors, SponsorLevel } from '@/data/sponsors'
+import { sponsors } from '@/data/sponsors'
 
 const SponsorsList: React.FC = () => {
   const sponsorsWithTitles = sponsors.map(
