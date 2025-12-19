@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { sponsors, SponsorLevel } from '@/data/sponsors'
 
 const SponsorsList: React.FC = () => {
-  // Map sponsors to include the title with proper pluralization
   const sponsorsWithTitles = sponsors.map(
     ({ level, sponsors: sponsorList }) => ({
       level,
