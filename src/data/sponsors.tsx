@@ -1,6 +1,7 @@
 // Define sponsor levels
 export type SponsorLevel =
   | 'MASTERPIECE'
+  | 'VISIONARY'
   | 'CURATOR'
   | 'VALET'
   | 'GALLERY'
@@ -19,8 +20,12 @@ export const sponsors: SponsorLevelData[] = [
     sponsors: ['Weerasooriya Family Foundation'],
   },
   {
-    level: 'CURATOR',
+    level: 'VISIONARY',
     sponsors: ['MFI Foundation'],
+  },
+  {
+    level: 'CURATOR',
+    sponsors: ['H-E-B', '360 MD'],
   },
   {
     level: 'VALET',
@@ -28,7 +33,7 @@ export const sponsors: SponsorLevelData[] = [
   },
   {
     level: 'GALLERY',
-    sponsors: ['H-E-B'],
+    sponsors: ['Jill Capella', 'Judy Osborn'],
   },
   {
     level: 'CANVAS',
@@ -37,16 +42,20 @@ export const sponsors: SponsorLevelData[] = [
   {
     level: 'EXHIBIT',
     sponsors: [
-      'Einstein Moving Company',
-      'Liane and Mark Noble',
-      'Barneson Catering',
-      'Lila and David Broslma',
-      'Liz Bailey',
-      'Emma Cartmel',
-      'Rob Hellams',
-      'Bill Skeen',
-      'Ascension',
       'Allensworth',
+      'Arledge Family',
+      'Ascension',
+      'Liz Bailey',
+      'Barnison Catering',
+      'Lila and David Broslma',
+      'Emma Cartmel',
+      'Maggie Cheu',
+      'Covert Cadillac of Austin',
+      'Einstein Moving Company',
+      'Rob Hellams',
+      'John Jones',
+      'Liane and Mark Noble',
+      'Bill Skeen',
     ],
   },
 ]
