@@ -7,6 +7,7 @@ export type SponsorLevel =
   | 'GALLERY'
   | 'CANVAS'
   | 'EXHIBIT'
+  | 'ARTISAN'
 
 // Define sponsor levels and their sponsors
 export interface SponsorLevelData {
@@ -52,7 +53,7 @@ export const sponsors: SponsorLevelData[] = [
       'Cartmell Ventures',
       'Maggie Cheu',
       'City of Austin',
-      'Covert Cadillac of Austin',
+      'Covert Buick GMC Bee Cave',
       'Einstein Moving Company',
       'Rob Hellams',
       'Robin Hendrix',
@@ -65,5 +66,9 @@ export const sponsors: SponsorLevelData[] = [
       'Bill Skeen',
       'Dewi Smith'
     ],
+  },
+  {
+    level: 'ARTISAN',
+    sponsors: ['Cerris Builders', 'DuBois, Bryant & Campbell'],
   },
 ]
