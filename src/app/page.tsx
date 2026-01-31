@@ -289,7 +289,7 @@ export default function Home() {
                 }}
               >
                 <Image
-                  src="/safe-gala-invite-pg2.pdf.png"
+                  src="/safe-gala-invite-pg2.png"
                   alt="Gala Invitation Page 2"
                   width={1200}
                   height={1600}
@@ -297,6 +297,7 @@ export default function Home() {
                     width: '100%',
                     height: 'auto',
                     display: 'block',
+                    marginBottom: '-3px',
                   }}
                 />
               </Box>
