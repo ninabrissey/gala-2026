@@ -179,7 +179,6 @@ export default function Home() {
           sx={{
             width: '100%',
             mt: 8,
-            mb: 8,
           }}
         >
           {/* Mobile: Show 5 smaller invitation images in column */}
@@ -217,9 +216,10 @@ export default function Home() {
                     width={800}
                     height={1000}
                     style={{
-                      width: '100%',
+                      width: num === 4 ? '101%': '100%',
                       height: 'auto',
                       display: 'block',
+                      marginLeft: num === 4 ? '-3px' : '0',
                     }}
                   />
                 </Box>
