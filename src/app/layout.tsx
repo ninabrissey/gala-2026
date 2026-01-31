@@ -12,6 +12,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Gala 2026',
   description: 'Frontend application for Gala 2026',
+  icons: {
+    icon: '/hope.png',
+  },
 }
 
 export default function RootLayout({

@@ -9,9 +9,17 @@ import ListItem from '@mui/material/ListItem'
 import Box from '@mui/material/Box'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
+import Link from 'next/link'
+import Image from 'next/image'
 import { NavButton } from './NavButton'
 
-const navLinks = [
+type NavLink = {
+  name: string;
+  href: string;
+  target?: string;
+}
+
+const navLinks: NavLink[] = [
   {
     name: 'Sponsor',
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor',
@@ -24,6 +32,18 @@ const navLinks = [
     name: 'Donate',
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/donate?p=donation',
   },
+  {
+    name: 'Invitation',
+    href: '#invitation',
+  },
+  {
+    name: 'Sponsors List',
+    href: '#sponsorsList',
+  },
+]
+
+const mobileNavLinks: NavLink[] = [
+  ...navLinks,
   {
     name: 'SAFE',
     href: 'https://www.safeaustin.org/',
@@ -42,10 +62,9 @@ const Navbar = () => {
     <>
       <AppBar
         position="fixed"
-        elevation={0}
         sx={{
-          backgroundColor: { xs: 'transparent', md: (theme) => theme.palette.background.default },
-          backgroundImage: 'none',
+          backgroundColor: { xs: 'transparent', md: '#000000' },
+          backgroundImage: { xs: 'none', md: 'none' },
           boxShadow: { xs: 'none', md: 2 },
           top: 0,
           zIndex: 1100,
@@ -53,13 +72,14 @@ const Navbar = () => {
       >
         <Toolbar
           sx={{
-            backgroundColor: 'transparent',
+            backgroundColor: { xs: 'transparent', md: '#000000' },
             display: 'flex',
-            justifyContent: { xs: 'start', md: 'end' },
+            justifyContent: { xs: 'start', md: 'space-between' },
             alignItems: 'center',
             gap: (theme) => theme.spacing(1.5),
             pr: 3,
             pl: { xs: 2, md: 3 },
+            minHeight: { xs: 56, md: 64 },
           }}
         >
           {/* Mobile Hamburger Menu */}
@@ -80,6 +100,33 @@ const Navbar = () => {
           >
             <MenuIcon />
           </IconButton>
+
+          {/* Desktop SAFE Logo */}
+          <Link
+            href="https://www.safeaustin.org/"
+            target="_blank"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <Box
+              sx={{
+                display: { xs: 'none', md: 'block' },
+                height: 40,
+                position: 'relative',
+                width: 200,
+                '&:hover': {
+                  opacity: 0.8,
+                },
+                transition: 'opacity 0.3s',
+              }}
+            >
+              <Image
+                src="/safe-logo.svg"
+                alt="SAFE Logo"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </Box>
+          </Link>
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: (theme) => theme.spacing(1.5) }}>
@@ -128,8 +175,12 @@ const Navbar = () => {
             </IconButton>
           </Box>
           <List>
-            {navLinks.map((link) => (
-              <ListItem key={link.name} sx={{ justifyContent: 'center' }}>
+            {mobileNavLinks.map((link) => (
+              <ListItem
+                key={link.name}
+                sx={{ justifyContent: 'center' }}
+                onClick={link.href.startsWith('#') ? toggleDrawer(false) : undefined}
+              >
                 <NavButton
                   name={link.name}
                   href={link.href}
