@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Box, Typography, Stack, Button } from '@mui/material'
+import { Box, Typography, Stack, Button, Toolbar } from '@mui/material'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import { SponsorshipCard } from '@/components/SponsorshipCard'
@@ -27,8 +27,9 @@ export default function Home() {
       }}
     >
       <Navbar />
+      <Toolbar sx={{ display: { xs: 'none', md: 'block' } }} />
 
-      <Stack alignItems="center" spacing={0} sx={{ width: '100%' }}>
+      <Stack alignItems="center" spacing={0} sx={{ width: '100%', pt: { xs: 8, md: 0 } }}>
         <Image
           src="/Gala-2026-logo-type-only-full-color.png"
           alt="Safe logo"
@@ -176,11 +177,25 @@ export default function Home() {
 
         {/* Invitation Images Section */}
         <Box
+          id="invitation"
           sx={{
             width: '100%',
             mt: 8,
+            scrollMarginTop: { xs: '80px', md: '100px' },
           }}
         >
+          <Typography
+            variant="sectionHeading"
+            component="h2"
+            sx={{
+              textAlign: 'center',
+              mb: 6,
+              px: 2,
+            }}
+          >
+            Join us at the gallery
+          </Typography>
+
           {/* Mobile: Show 5 smaller invitation images in column */}
           <Stack
             spacing={3}
@@ -305,7 +320,9 @@ export default function Home() {
           </Stack>
         </Box>
 
-        <SponsorsList />
+        <Box id="sponsorsList">
+          <SponsorsList />
+        </Box>
         <Typography
           variant="sectionHeading"
           component="h2"
