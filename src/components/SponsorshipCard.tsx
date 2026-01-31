@@ -54,14 +54,12 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
           borderRadius: 6,
           p: { xs: 3, md: 5 },
           color: 'white',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
-          // Changed the background to a lighter, more vibrant gradient
-          background:
-            'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
+          boxShadow: (theme) => theme.shadows[6],
+          background: (theme) => theme.gradients.cardBackground,
           transition: 'transform 0.3s, box-shadow 0.3s',
           '&:hover': {
             transform: 'scale(1.01)',
-            boxShadow: '0 25px 60px rgba(75, 192, 235, 0.4)',
+            boxShadow: (theme) => theme.shadows[7],
           },
         }}
       >
@@ -88,16 +86,12 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
           {/* Title and Price Section */}
           <Box sx={{ textAlign: 'left', width: '100%' }}>
             <Typography
-              variant="h3"
+              variant="cardTitle"
               component="h2"
               sx={{
                 fontSize: { xs: '2rem', sm: '2rem', md: '2.5rem' },
-                fontWeight: 800,
-                letterSpacing: '-0.025em',
                 pb: 1,
-                lineHeight: 1.1,
-                backgroundImage:
-                  'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
+                backgroundImage: (theme) => theme.gradients.title,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -111,15 +105,13 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
               ))}
             </Typography>
             <Typography
-              variant="h4"
+              variant="cardPrice"
               component="p"
               sx={{
                 fontSize: { xs: '3rem', md: '4rem' },
-                fontWeight: 900,
                 mt: 1,
                 color: 'white',
-                backgroundImage:
-                  'linear-gradient(to right, #F28E2B, #E15759, #F5A524)',
+                backgroundImage: (theme) => theme.gradients.price,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -131,12 +123,10 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
 
           {/* Description Section */}
           <Typography
-            variant="body1"
+            variant="cardDescription"
             sx={{
               fontSize: { xs: '1rem', md: '1.25rem' },
               color: 'gray.300',
-              lineHeight: 1.6,
-              fontWeight: 300,
             }}
           >
             {description}
@@ -211,20 +201,17 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
                 width: '100%',
                 py: 1,
                 px: 2,
-                borderRadius: 50,
                 fontSize: '1.125rem',
                 fontWeight: 'bold',
                 color: 'white',
-                // Updated the button gradient to a more vibrant purple
-                background: 'linear-gradient(45deg, #A427F9 0%, #743EB5 100%)',
-                boxShadow: '0 8px 15px rgba(164, 39, 249, 0.4)',
+                background: (theme) => theme.gradients.buttonPrimary,
+                boxShadow: (theme) => theme.shadows[8],
                 transition: 'transform 0.3s',
                 textTransform: 'none',
                 '&:hover': {
                   transform: 'scale(1.05)',
-                  background:
-                    'linear-gradient(45deg, #8418D5 0%, #5C2B92 100%)',
-                  boxShadow: '0 10px 20px rgba(132, 24, 213, 0.6)',
+                  background: (theme) => theme.gradients.buttonHover,
+                  boxShadow: (theme) => theme.shadows[9],
                 },
               }}
             >
@@ -246,7 +233,7 @@ const FeatureItem: React.FC<{ text: string }> = ({ text }) => {
           variant="body1"
           sx={{
             fontSize: '1.25rem',
-            backgroundImage: 'linear-gradient(45deg, #EDC948, #F28E2B)',
+            backgroundImage: (theme) => theme.gradients.bulletPoint,
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',

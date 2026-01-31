@@ -20,10 +20,10 @@ export const NavButton = ({ name, href, target = '_self' }: NavButtonProps) => {
         letterSpacing: '0.1em',
         fontSize: '1rem',
         fontWeight: 'bold',
-        textShadow: '0 2px 4px rgba(255,255,255,0.3)',
-        p: '8px 16px',
+        textShadow: (theme) => theme.customShadows.textWhite,
+        p: (theme) => `${theme.spacing(1)} ${theme.spacing(2)}`,
         '&:hover': {
-          color: '#19B8CD',
+          color: (theme) => theme.palette.primary.main,
           backgroundColor: 'transparent',
           textDecoration: 'none',
         },

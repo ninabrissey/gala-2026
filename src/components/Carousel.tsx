@@ -24,7 +24,7 @@ const galleryImages = [
 ]
 
 export const Carousel = () => (
-  <Box sx={{ position: 'relative', py: 4, width: '100%', mb: 4 }}>
+  <Box sx={{ position: 'relative', py: (theme) => theme.spacing(4), width: '100%', mb: (theme) => theme.spacing(4) }}>
     <Swiper
       modules={[Navigation]}
       slidesPerView={'auto'}
@@ -48,7 +48,7 @@ export const Carousel = () => (
               height: { xs: '300px', md: '450px' },
               width: 'auto',
               display: 'block',
-              borderRadius: '8px',
+              borderRadius: (theme) => theme.spacing(1),
             }}
           />
         </SwiperSlide>
@@ -59,7 +59,7 @@ export const Carousel = () => (
       className="swiper-button-prev-custom"
       sx={{
         position: 'absolute',
-        left: { xs: '5px', md: '20px' },
+        left: { xs: '5px', md: (theme) => theme.spacing(2.5) },
         top: '50%',
         transform: 'translateY(-50%)',
         zIndex: 10,
@@ -75,7 +75,7 @@ export const Carousel = () => (
       className="swiper-button-next-custom"
       sx={{
         position: 'absolute',
-        right: { xs: '5px', md: '20px' },
+        right: { xs: '5px', md: (theme) => theme.spacing(2.5) },
         top: '50%',
         transform: 'translateY(-50%)',
         zIndex: 10,

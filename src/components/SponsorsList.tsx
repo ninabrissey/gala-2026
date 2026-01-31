@@ -15,8 +15,8 @@ const SponsorsList: React.FC = () => {
   )
 
   return (
-    <Container maxWidth="lg" sx={{ backgroundColor: 'black', mt: 8 }}>
-      <Box sx={{ mb: 8, mt: 8 }}>
+    <Container maxWidth="lg" sx={{ backgroundColor: (theme) => theme.palette.background.default, mt: (theme) => theme.spacing(8) }}>
+      <Box sx={{ mb: (theme) => theme.spacing(8), mt: (theme) => theme.spacing(8) }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,17 +24,12 @@ const SponsorsList: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <Typography
-            variant="h4"
+            variant="sectionHeading"
             component="h2"
             sx={{
               textAlign: 'center',
               mb: 3,
               mt: 6,
-              fontWeight: 'bold',
-              color: 'white',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              textShadow: '0 2px 4px rgba(255,255,255,0.3)',
             }}
           >
             Thank You To Our Generous Sponsors
@@ -42,7 +37,7 @@ const SponsorsList: React.FC = () => {
         </motion.div>
       </Box>
       {sponsorsWithTitles.map(({ level, title, sponsors }) => (
-        <Box key={level} sx={{ mb: 8 }}>
+        <Box key={level} sx={{ mb: (theme) => theme.spacing(8) }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,18 +45,12 @@ const SponsorsList: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <Typography
-              variant="h4"
+              variant="sectionHeading"
               component="h2"
               sx={{
                 textAlign: 'center',
                 mb: 3,
                 mt: 6,
-                fontWeight: 'bold',
-                color: 'white',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                fontSize: '1.8rem',
-                textShadow: '0 2px 4px rgba(255,255,255,0.3)',
               }}
             >
               {title}
@@ -89,7 +78,6 @@ const SponsorsList: React.FC = () => {
                   }}
                   whileHover={{
                     scale: 1.05,
-                    textShadow: '0 0 10px rgba(255,255,255,0.5)',
                     transition: { duration: 0.2 },
                   }}
                   whileTap={{
@@ -101,8 +89,7 @@ const SponsorsList: React.FC = () => {
                     variant="h5"
                     component="div"
                     sx={{
-                      background:
-                        'linear-gradient(90deg, #ff8a00, #e52e71, #9b59b6, #3498db, #00d4ff, #ff8a00)',
+                      background: (theme) => theme.gradients.rainbow,
                       backgroundSize: '400% 400%',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',

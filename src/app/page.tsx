@@ -83,7 +83,7 @@ export default function Home() {
               variant="contained"
               onClick={() => setChairLetterOpen(!chairLetterOpen)}
               sx={{
-                backgroundColor: '#19B8CD',
+                backgroundColor: (theme) => theme.palette.primary.main,
                 color: 'white',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
@@ -91,11 +91,10 @@ export default function Home() {
                 fontSize: '1.8rem',
                 px: 8,
                 py: 2,
-                borderRadius: '50px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                boxShadow: (theme) => theme.shadows[3],
                 '&:hover': {
-                  backgroundColor: '#0fa4b8',
-                  boxShadow: '0 6px 12px rgba(0,0,0,0.25)',
+                  backgroundColor: (theme) => theme.palette.primary.dark,
+                  boxShadow: (theme) => theme.shadows[4],
                   transform: 'translateY(-2px)',
                 },
                 transition: 'all 0.3s ease',
@@ -120,18 +119,12 @@ export default function Home() {
 
       <Stack sx={{ mt: 4 }} alignItems="center">
         <Typography
-          variant="h4"
+          variant="sectionHeading"
           component="h2"
           sx={{
             textAlign: 'center',
             mb: 5,
             mt: 6,
-            fontWeight: 'bold',
-            color: 'white',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            fontSize: '1.8rem',
-            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
           }}
         >
           SPONSORSHIP LEVELS
@@ -183,18 +176,12 @@ export default function Home() {
 
         <SponsorsList />
         <Typography
-          variant="h4"
+          variant="sectionHeading"
           component="h2"
           sx={{
             textAlign: 'center',
             mb: 4,
             mt: 4,
-            fontWeight: 'bold',
-            color: 'white',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            fontSize: '1.8rem',
-            textShadow: '0 2px 4px rgba(255,255,255,0.3)',
           }}
         >
           GALA TEAM
@@ -209,13 +196,13 @@ export default function Home() {
             display: 'flex',
             justifyContent: 'center',
             '& .team-names': {
-              color: '#1db6ce',
+              color: (theme) => theme.palette.accent.main,
               fontSize: '1.2rem',
               fontWeight: 500,
               lineHeight: 1.6,
               textAlign: 'center',
               width: '90%',
-              textShadow: '0 0 10px rgba(29, 182, 206, 0.3)',
+              textShadow: (theme) => theme.customShadows.textCyan,
             },
           }}
         >
