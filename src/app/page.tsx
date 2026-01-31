@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Box, Typography, Stack, Button } from '@mui/material'
+import { Box, Typography, Stack, Button, Toolbar } from '@mui/material'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import { SponsorshipCard } from '@/components/SponsorshipCard'
@@ -27,6 +27,7 @@ export default function Home() {
       }}
     >
       <Navbar />
+      <Toolbar sx={{ display: { xs: 'none', md: 'block' } }} />
 
       <Stack alignItems="center" spacing={0} sx={{ width: '100%' }}>
         <Image
