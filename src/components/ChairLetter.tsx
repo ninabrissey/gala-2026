@@ -59,14 +59,14 @@ export const ChairLetter = () => {
     <Box
       sx={{
         color: 'white',
-        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
-        background: 'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
+        boxShadow: (theme) => theme.shadows[6],
+        background: (theme) => theme.gradients.cardBackground,
         transition: 'transform 0.3s, box-shadow 0.3s',
-        borderRadius: '30px',
-        padding: '35px',
+        borderRadius: (theme) => theme.spacing(3.75),
+        padding: (theme) => theme.spacing(4.375),
         maxWidth: '1200px',
         margin: 'auto',
-        marginTop: '40px',
+        marginTop: (theme) => theme.spacing(5),
         textAlign: 'left',
         fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         '& p': {
@@ -110,7 +110,7 @@ export const ChairLetter = () => {
               fontSize: '1.8rem',
               fontWeight: 600,
               mb: 2,
-              backgroundImage: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
+              backgroundImage: (theme) => theme.gradients.title,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -172,26 +172,34 @@ export const ChairLetter = () => {
             mt: { xs: 3, md: 0 },
           }}
         >
-          <Image
-            src="/imageedit_4_5480396383.png"
-            alt="Nelia Robbi"
-            width={160}
-            height={180}
-            style={{
-              borderRadius: '12px',
-              boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+          <Box
+            sx={{
+              borderRadius: (theme) => theme.spacing(1.5),
+              boxShadow: (theme) => theme.shadows[5],
+              overflow: 'hidden',
             }}
-          />
-          <Image
-            src="/imageedit_15_4866972827.png"
-            alt="Karly Houchin"
-            width={145}
-            height={185}
-            style={{
-              borderRadius: '12px',
-              boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+          >
+            <Image
+              src="/imageedit_4_5480396383.png"
+              alt="Nelia Robbi"
+              width={160}
+              height={180}
+            />
+          </Box>
+          <Box
+            sx={{
+              borderRadius: (theme) => theme.spacing(1.5),
+              boxShadow: (theme) => theme.shadows[5],
+              overflow: 'hidden',
             }}
-          />
+          >
+            <Image
+              src="/imageedit_15_4866972827.png"
+              alt="Karly Houchin"
+              width={145}
+              height={185}
+            />
+          </Box>
         </Box>
       </Stack>
     </Box>

@@ -8,7 +8,7 @@ const Navbar = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: 'black',
+        backgroundColor: (theme) => theme.palette.background.default,
         position: 'sticky',
         top: 0,
         zIndex: 100,
@@ -16,12 +16,12 @@ const Navbar = () => {
     >
       <Toolbar
         sx={{
-          backgroundColor: 'black',
+          backgroundColor: (theme) => theme.palette.background.default,
           display: 'flex',
           justifyContent: 'end',
           alignItems: 'center',
-          gap: '12px',
-          paddingRight: '24px',
+          gap: (theme) => theme.spacing(1.5),
+          pr: 3,
         }}
       >
         <NavButton
