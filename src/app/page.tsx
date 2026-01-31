@@ -182,7 +182,59 @@ export default function Home() {
             mb: 8,
           }}
         >
-          <Stack spacing={4} alignItems="center">
+          {/* Mobile: Show 5 smaller invitation images in column */}
+          <Stack
+            spacing={3}
+            alignItems="center"
+            sx={{
+              display: { xs: 'flex', md: 'none' },
+              px: 2,
+            }}
+          >
+            {[1, 2, 3, 4, 5].map((num) => (
+              <Box
+                key={num}
+                component={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: num * 0.1 }}
+                sx={{
+                  width: '100%',
+                }}
+              >
+                <Box
+                  sx={{
+                    width: '100%',
+                    borderRadius: (theme) => theme.spacing(1),
+                    boxShadow: (theme) => theme.shadows[5],
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Image
+                    src={`/invite${num}.png`}
+                    alt={`Gala Invitation ${num}`}
+                    width={800}
+                    height={1000}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                </Box>
+              </Box>
+            ))}
+          </Stack>
+
+          {/* Desktop: Show 2 full invitation images */}
+          <Stack
+            spacing={4}
+            alignItems="center"
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+            }}
+          >
             <Box
               component={motion.div}
               initial={{ opacity: 0, y: 20 }}
