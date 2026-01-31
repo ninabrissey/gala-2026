@@ -174,6 +174,84 @@ export default function Home() {
           </Box>
         </Box>
 
+        {/* Invitation Images Section */}
+        <Box
+          sx={{
+            width: '100%',
+            mt: 8,
+            mb: 8,
+          }}
+        >
+          <Stack spacing={4} alignItems="center">
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  borderRadius: (theme) => theme.spacing(1),
+                  boxShadow: (theme) => theme.shadows[5],
+                  overflow: 'hidden',
+                }}
+              >
+                <Image
+                  src="/safe-gala-invite-pg1.png"
+                  alt="Gala Invitation Page 1"
+                  width={1200}
+                  height={1600}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                  }}
+                />
+              </Box>
+            </Box>
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  borderRadius: (theme) => theme.spacing(1),
+                  boxShadow: (theme) => theme.shadows[5],
+                  overflow: 'hidden',
+                }}
+              >
+                <Image
+                  src="/safe-gala-invite-pg2.pdf.png"
+                  alt="Gala Invitation Page 2"
+                  width={1200}
+                  height={1600}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                  }}
+                />
+              </Box>
+            </Box>
+          </Stack>
+        </Box>
+
         <SponsorsList />
         <Typography
           variant="sectionHeading"
