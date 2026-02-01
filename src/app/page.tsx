@@ -31,7 +31,7 @@ export default function Home() {
 
       <Stack alignItems="center" spacing={0} sx={{ width: '100%', pt: { xs: 8, md: 0 } }}>
         <Image
-          src="/Gala-2026-logo-type-only-full-color.png"
+          src="/Gala-2026-logo-type-only-full-color-1.png"
           alt="Safe logo"
           width={750}
           height={375}
@@ -104,16 +104,6 @@ export default function Home() {
               {chairLetterOpen ? 'CLOSE CHAIR LETTER' : 'READ CHAIR LETTER'}
             </Button>
           </Box>
-
-          {/* {!chairLetterOpen && <Image
-            onClick={() => setChairLetterOpen(!chairLetterOpen)}
-              src="/open-chair-letter.png"
-              alt="chair letter"
-              width={500}
-              height={250}
-              priority
-            />} */}
-
           {chairLetterOpen && <ChairLetter />}
         </Box>
       </Box>
