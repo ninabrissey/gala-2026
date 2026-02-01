@@ -303,6 +303,7 @@ export default function Home() {
                     height: 'auto',
                     display: 'block',
                     marginBottom: '-3px',
+                    marginLeft:'-3px'
                   }}
                 />
               </Box>
