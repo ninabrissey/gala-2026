@@ -195,7 +195,7 @@ export default function Home() {
               px: 2,
             }}
           >
-            {[1, 2, 3, 4, 5].map((num) => (
+            {[2, 3, 4, 5].map((num) => (
               <Box
                 key={num}
                 component={motion.div}
