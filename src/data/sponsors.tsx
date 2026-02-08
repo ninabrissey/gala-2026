@@ -75,6 +75,6 @@ export const sponsors: SponsorLevelData[] = [
   },
   {
     level: 'ARTISAN',
-    sponsors: ['Cerris Builders', 'DuBois, Bryant & Campbell'],
+    sponsors: ['Cerris Builders', 'DuBois, Bryant & Campbell', 'Watkins Insurance Group-Greg Meserole'],
   },
 ]
