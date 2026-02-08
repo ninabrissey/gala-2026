@@ -26,7 +26,7 @@ export const sponsors: SponsorLevelData[] = [
   },
   {
     level: 'CURATOR',
-    sponsors: ['360 MD', 'Anonymous'],
+    sponsors: ['360 MD Integrative Primary Care', 'Anonymous'],
   },
   {
     level: 'VALET',
@@ -38,7 +38,7 @@ export const sponsors: SponsorLevelData[] = [
   },
   {
     level: 'CANVAS',
-    sponsors: ['Bank of Texas', 'Barnison Catering', 'Alicia and Michael Cole', "St. David's Foundation"],
+    sponsors: ['Bank of Texas', 'Barnison Catering', 'Alicia and Michael Cole', "St. David's Foundation", "XOLO Foundation"],
   },
   {
     level: 'EXHIBIT',
@@ -46,6 +46,7 @@ export const sponsors: SponsorLevelData[] = [
       'Allensworth',
       'Arledge Family',
       'Ascension',
+      'James Avery',
       'Liz Bailey',
       'Dr. Pierre Berastain',
       'Bonterra',
@@ -55,16 +56,21 @@ export const sponsors: SponsorLevelData[] = [
       'City of Austin',
       'Covert Buick GMC Bee Cave',
       'Einstein Moving Company',
+      'Megan Fanale',
       'Rob Hellams',
       'Robin Hendrix',
       'Karly Houchin',
       'John Jones',
       'McGinnis Lochridge',
       'Moody Bank',
+      'Manju Mude',
       'Liane and Mark Noble',
+      'Venus Pineyro De Hoyos',
       'Nelia Robbi',
+      'Iris Saenz',
       'Bill Skeen',
-      'Dewi Smith'
+      'Dewi Smith',
+      'Vinson & Elkins',
     ],
   },
   {
