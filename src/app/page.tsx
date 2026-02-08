@@ -31,7 +31,7 @@ export default function Home() {
 
       <Stack alignItems="center" spacing={0} sx={{ width: '100%', pt: { xs: 8, md: 0 } }}>
         <Image
-          src="/Gala-2026-logo-type-only-full-color-1.png"
+          src="/Gala-2026-logo-type-only-full-color.png"
           alt="Safe logo"
           width={750}
           height={375}
@@ -195,7 +195,7 @@ export default function Home() {
               px: 2,
             }}
           >
-            {[2, 3, 4, 5].map((num) => (
+            {[1, 2, 3, 4, 5].map((num) => (
               <Box
                 key={num}
                 component={motion.div}
