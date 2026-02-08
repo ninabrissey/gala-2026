@@ -85,6 +85,19 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
         >
           {/* Title and Price Section */}
           <Box sx={{ textAlign: 'left', width: '100%' }}>
+            {/* Gallery of Hope label */}
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: { xs: '0.875rem', md: '1rem' },
+                color: 'white',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                mb: 1,
+              }}
+            >
+              GALLERY OF HOPE
+            </Typography>
             <Typography
               variant="cardTitle"
               component="h2"
@@ -119,6 +132,15 @@ export const SponsorshipCard: React.FC<SponsorshipCardProps> = ({
             >
               {price}
             </Typography>
+            {/* Divider line under price */}
+            <Box
+              sx={{
+                width: '100%',
+                height: '2px',
+                mt: 2,
+                background: (theme) => theme.gradients.buttonPrimary,
+              }}
+            />
           </Box>
 
           {/* Description Section */}

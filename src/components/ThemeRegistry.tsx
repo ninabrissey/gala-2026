@@ -174,9 +174,9 @@ const theme = createTheme({
     '0 6px 12px rgba(0,0,0,0.25)',  // 4 - button hover
     '0 10px 20px rgba(0,0,0,0.2)',  // 5 - image
     '0 20px 50px rgba(0, 0, 0, 0.5)',  // 6 - card
-    '0 25px 60px rgba(75, 192, 235, 0.4)',  // 7 - card hover (cyan glow)
-    '0 8px 15px rgba(164, 39, 249, 0.4)',  // 8 - button shadow (purple)
-    '0 10px 20px rgba(132, 24, 213, 0.6)',  // 9 - button hover (purple)
+    '0 25px 60px rgba(235, 29, 126, 0.3)',  // 7 - card hover (pink glow)
+    '0 8px 15px rgba(235, 29, 126, 0.4)',  // 8 - button shadow (pink)
+    '0 10px 20px rgba(199, 16, 101, 0.6)',  // 9 - button hover (pink)
     '0 4px 6px rgba(0,0,0,0.1)',  // 10
     '0 5px 15px rgba(0,0,0,0.15)',  // 11
     '0 10px 25px rgba(0,0,0,0.2)',  // 12
@@ -227,12 +227,12 @@ const theme = createTheme({
   },
   // Custom theme extensions
   gradients: {
-    cardBackground: 'linear-gradient(225deg, #1A1A1A 0%, #444444 50%, #1A1A1A 100%)',
-    title: 'linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA)',
-    price: 'linear-gradient(to right, #F28E2B, #E15759, #F5A524)',
-    buttonPrimary: 'linear-gradient(45deg, #A427F9 0%, #743EB5 100%)',
-    buttonHover: 'linear-gradient(45deg, #8418D5 0%, #5C2B92 100%)',
-    bulletPoint: 'linear-gradient(45deg, #EDC948, #F28E2B)',
+    cardBackground: 'linear-gradient(225deg, #1A1A1A 0%, #2A2A2A 50%, #1A1A1A 100%)',
+    title: 'linear-gradient(to right, #19B8CD, #4CD4E3)',
+    price: 'linear-gradient(to right, #FF8C42, #FFA500)',
+    buttonPrimary: 'linear-gradient(45deg, #EB1D7E 0%, #C71065 100%)',
+    buttonHover: 'linear-gradient(45deg, #C71065 0%, #A00D52 100%)',
+    bulletPoint: 'linear-gradient(45deg, #FF8C42, #FFA500)',
     rainbow: 'linear-gradient(90deg, #ff8a00, #e52e71, #9b59b6, #3498db, #00d4ff, #ff8a00)',
   },
   customShadows: {
