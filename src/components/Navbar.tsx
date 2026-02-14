@@ -14,9 +14,9 @@ import Image from 'next/image'
 import { NavButton } from './NavButton'
 
 type NavLink = {
-  name: string;
-  href: string;
-  target?: string;
+  name: string
+  href: string
+  target?: string
 }
 
 const navLinks: NavLink[] = [
@@ -29,6 +29,10 @@ const navLinks: NavLink[] = [
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/tix?p=individual',
   },
   {
+    name: 'Luxury Raffle',
+    href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/luxuryraffle?p=quantity-item',
+  },
+  {
     name: 'Donate',
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/donate?p=donation',
   },
@@ -37,7 +41,7 @@ const navLinks: NavLink[] = [
     href: '#invitation',
   },
   {
-    name: 'Sponsors List',
+    name: 'Sponsors',
     href: '#sponsorsList',
   },
 ]
@@ -74,12 +78,13 @@ const Navbar = () => {
           sx={{
             backgroundColor: { xs: 'transparent', md: '#000000' },
             display: 'flex',
-            justifyContent: { xs: 'start', md: 'space-between' },
+            justifyContent: { xs: 'start', sm: 'flex-end', md: 'center' },
             alignItems: 'center',
             gap: (theme) => theme.spacing(1.5),
             pr: 3,
             pl: { xs: 2, md: 3 },
             minHeight: { xs: 56, md: 64 },
+            position: 'relative',
           }}
         >
           {/* Mobile Hamburger Menu */}
@@ -89,13 +94,16 @@ const Navbar = () => {
             aria-label="menu"
             onClick={toggleDrawer(true)}
             sx={{
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex', lg: 'none' },
               color: 'white',
               backgroundColor: (theme) => theme.palette.background.default,
               borderRadius: 1,
               '&:hover': {
                 backgroundColor: (theme) => theme.palette.background.paper,
               },
+              position: 'absolute',
+              left: { xs: 16, sm: 24, md: 24 },
+              zIndex: 1,
             }}
           >
             <MenuIcon />
@@ -109,14 +117,16 @@ const Navbar = () => {
           >
             <Box
               sx={{
-                display: { xs: 'none', md: 'block' },
+                display: { xs: 'none', lg: 'block' },
                 height: 40,
-                position: 'relative',
+                position: 'absolute',
+                left: { xs: 0, md: 24 },
                 width: 200,
                 '&:hover': {
                   opacity: 0.8,
                 },
                 transition: 'opacity 0.3s',
+                zIndex: 1,
               }}
             >
               <Image
@@ -129,7 +139,17 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: (theme) => theme.spacing(1.5) }}>
+          <Box
+            sx={(theme) => ({
+              display: { xs: 'none', lg: 'flex' },
+              gap: theme.spacing(1.5),
+              position: 'relative',
+              zIndex: 0,
+              justifyContent: { lg: 'flex-end', xl: 'center' },
+              marginLeft: { lg: '220px', xl: '0' },
+              marginRight: { lg: '0', xl: '0' },
+            })}
+          >
             {navLinks.map((link) => (
               <NavButton
                 key={link.name}
@@ -148,12 +168,16 @@ const Navbar = () => {
         open={drawerOpen}
         onClose={toggleDrawer(false)}
         sx={{
-          display: { xs: 'block', md: 'none' },
+          display: { xs: 'block', lg: 'none' },
+          '& .MuiDrawer-paper': {
+            width: 280,
+            boxSizing: 'border-box',
+          },
         }}
       >
         <Box
           sx={{
-            width: 250,
+            width: '100%',
             backgroundColor: (theme) => theme.palette.background.default,
             height: '100%',
             color: 'white',
@@ -167,10 +191,7 @@ const Navbar = () => {
               p: 2,
             }}
           >
-            <IconButton
-              onClick={toggleDrawer(false)}
-              sx={{ color: 'white' }}
-            >
+            <IconButton onClick={toggleDrawer(false)} sx={{ color: 'white' }}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -179,7 +200,9 @@ const Navbar = () => {
               <ListItem
                 key={link.name}
                 sx={{ justifyContent: 'center' }}
-                onClick={link.href.startsWith('#') ? toggleDrawer(false) : undefined}
+                onClick={
+                  link.href.startsWith('#') ? toggleDrawer(false) : undefined
+                }
               >
                 <NavButton
                   name={link.name}

@@ -11,12 +11,23 @@ const SponsorsList: React.FC = () => {
         sponsorList.length > 1 ? 'S' : ''
       }`,
       sponsors: sponsorList,
-    })
+    }),
   )
 
   return (
-    <Container maxWidth="lg" sx={{ backgroundColor: (theme) => theme.palette.background.default, mt: (theme) => theme.spacing(8) }}>
-      <Box sx={{ mb: (theme) => theme.spacing(8), mt: (theme) => theme.spacing(8) }}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        backgroundColor: (theme) => theme.palette.background.default,
+        mt: (theme) => theme.spacing(8),
+      }}
+    >
+      <Box
+        sx={{
+          mb: (theme) => theme.spacing(8),
+          mt: (theme) => theme.spacing(8),
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +69,21 @@ const SponsorsList: React.FC = () => {
 
             <Box
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: 2,
+                display: 'grid',
+                gridTemplateColumns:
+                  sponsors.length === 1
+                    ? '1fr'
+                    : sponsors.length === 2
+                      ? '1fr 1fr'
+                      : { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
+                gap: 3,
+                maxWidth:
+                  sponsors.length === 1
+                    ? '600px'
+                    : sponsors.length === 2
+                      ? '800px'
+                      : '1200px',
+                mx: 'auto',
               }}
             >
               {sponsors.map((sponsorName: string, index: number) => (
