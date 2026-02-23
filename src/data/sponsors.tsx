@@ -38,7 +38,7 @@ export const sponsors: SponsorLevelData[] = [
   },
   {
     level: 'CANVAS',
-    sponsors: ['Bank of Texas', 'Barnison Catering', 'Alicia and Michael Cole', "St. David's Foundation", "XOLO Foundation"],
+    sponsors: ['Bank of Texas', "St. David's Foundation", "XOLO Foundation"],
   },
   {
     level: 'EXHIBIT',
@@ -53,6 +53,7 @@ export const sponsors: SponsorLevelData[] = [
       'Cartmell Ventures',
       'Maggie Cheu & Adam Ernst',
       'City of Austin',
+      'Alicia and Michael Cole',
       'Covert Buick GMC Bee Cave',
       'Einstein Moving Company',
       'Megan & Jim Fanale',
