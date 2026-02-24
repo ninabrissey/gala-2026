@@ -84,24 +84,24 @@ export default function Home() {
               variant="contained"
               onClick={() => setChairLetterOpen(!chairLetterOpen)}
               sx={{
-                backgroundColor: (theme) => theme.palette.primary.main,
+                background: (theme) => theme.gradients.buttonPrimary,
                 color: 'white',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                fontSize: '1.8rem',
-                px: 8,
-                py: 2,
-                boxShadow: (theme) => theme.shadows[3],
+                letterSpacing: '0.1em',
+                fontSize: { xs: '1.125rem', md: '1.375rem' },
+                px: { xs: 4, md: 5 },
+                py: { xs: 1.5, md: 1.75 },
+                boxShadow: (theme) => theme.shadows[6],
                 '&:hover': {
-                  backgroundColor: (theme) => theme.palette.primary.dark,
-                  boxShadow: (theme) => theme.shadows[4],
-                  transform: 'translateY(-2px)',
+                  background: (theme) => theme.gradients.buttonHover,
+                  boxShadow: (theme) => theme.shadows[8],
+                  transform: 'scale(1.05)',
                 },
                 transition: 'all 0.3s ease',
               }}
             >
-              {chairLetterOpen ? 'CLOSE CHAIR LETTER' : 'READ CHAIR LETTER'}
+              {chairLetterOpen ? 'Close Chair Letter' : 'Read Chair Letter'}
             </Button>
           </Box>
           {chairLetterOpen && <ChairLetter />}
