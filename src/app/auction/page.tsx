@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Box, Typography, Container } from '@mui/material'
+import { Box, Typography, Container, Toolbar } from '@mui/material'
+import Navbar from '@/components/Navbar'
 import { AuctionItemCard } from '@/components/AuctionItemCard'
 import { auctionItems } from '@/data/auction-items'
 
@@ -11,9 +12,12 @@ export default function AuctionPage() {
       sx={{
         minHeight: '100vh',
         backgroundColor: 'black',
-        py: 8,
       }}
     >
+      <Navbar />
+      <Toolbar sx={{ display: { xs: 'none', md: 'block' } }} />
+
+      <Box sx={{ py: 8 }}>
       <Container maxWidth="xl">
         {/* Header Section */}
         <Box
@@ -100,6 +104,7 @@ export default function AuctionPage() {
           </Typography>
         </Box>
       </Container>
+      </Box>
     </Box>
   )
 }

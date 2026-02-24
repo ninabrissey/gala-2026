@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -20,6 +21,10 @@ type NavLink = {
 }
 
 const navLinks: NavLink[] = [
+  {
+    name: 'Home',
+    href: '/',
+  },
   {
     name: 'Sponsor',
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor',
@@ -42,11 +47,11 @@ const navLinks: NavLink[] = [
   },
   {
     name: 'Invitation',
-    href: '#invitation',
+    href: '/#invitation',
   },
   {
     name: 'Sponsors',
-    href: '#sponsorsList',
+    href: '/#sponsorsList',
   },
 ]
 
@@ -61,9 +66,23 @@ const mobileNavLinks: NavLink[] = [
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open)
+  }
+
+  const isActive = (href: string) => {
+    // External links are never active
+    if (href.startsWith('http')) {
+      return false
+    }
+    // Anchor links are never shown as active
+    if (href.startsWith('/#')) {
+      return false
+    }
+    // Regular path matching
+    return pathname === href
   }
 
   return (
@@ -160,6 +179,7 @@ const Navbar = () => {
                 name={link.name}
                 href={link.href}
                 target={link.target}
+                isActive={isActive(link.href)}
               />
             ))}
           </Box>
@@ -205,13 +225,14 @@ const Navbar = () => {
                 key={link.name}
                 sx={{ justifyContent: 'center' }}
                 onClick={
-                  link.href.startsWith('#') ? toggleDrawer(false) : undefined
+                  link.href.startsWith('#') || link.href.startsWith('/#') ? toggleDrawer(false) : undefined
                 }
               >
                 <NavButton
                   name={link.name}
                   href={link.href}
                   target={link.target}
+                  isActive={isActive(link.href)}
                 />
               </ListItem>
             ))}
