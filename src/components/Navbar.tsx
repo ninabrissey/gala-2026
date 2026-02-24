@@ -33,6 +33,10 @@ const navLinks: NavLink[] = [
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/luxuryraffle?p=quantity-item',
   },
   {
+    name: 'Live Auction',
+    href: '/auction',
+  },
+  {
     name: 'Donate',
     href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/donate?p=donation',
   },
