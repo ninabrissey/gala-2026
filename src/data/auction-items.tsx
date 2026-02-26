@@ -66,7 +66,7 @@ This piece is about perseverance, healing and the belief that tomorrow can be be
     number: '404',
     title: 'Four-Season Luxury Vail Escape',
     category: 'Travel',
-    description: `Discover Vail in its most unforgettable form, where alpine adventure meets refined mountain luxury.
+    description: `Discover Vail in its most unforgettable form, where alpine adventure meets refined mountain luxury during your 7 night stay for up to 8 guests.
 
 In the winter, carve fresh powder across legendary slopes, wander the twinkling streets of Vail Village, and unwind with fireside cocktails after a day on the mountain. From world-class skiing to elevated après-ski, every moment feels cinematic.
 

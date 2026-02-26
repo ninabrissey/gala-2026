@@ -25,21 +25,25 @@ const navLinks: NavLink[] = [
     name: 'Home',
     href: '/',
   },
+  // {
+  //   name: 'Sponsor',
+  //   href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor',
+  // },
+  // {
+  //   name: 'Tickets',
+  //   href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/tix?p=individual',
+  // },
   {
-    name: 'Sponsor',
-    href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/sponsor?p=sponsor',
-  },
-  {
-    name: 'Tickets',
-    href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/tix?p=individual',
-  },
-  {
-    name: 'Luxury Raffle',
-    href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/luxuryraffle?p=quantity-item',
+    name: 'Silent Auction',
+    href: 'https://hellofund.io/app/public/bidapp/safegala2026/auction',
   },
   {
     name: 'Live Auction',
     href: '/auction',
+  },
+  {
+    name: 'Luxury Raffle',
+    href: 'https://hellofund.io/app/public/bidapp/safegala2026/tickets/luxuryraffle?p=quantity-item',
   },
   {
     name: 'Donate',
